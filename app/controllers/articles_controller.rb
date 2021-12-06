@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
   def show
 
-        @article = Article.find(params[:id])
+        @article = set_article
 
     end
 
@@ -29,7 +29,7 @@ class ArticlesController < ApplicationController
         
     end
      def destroy
-      
+        set_article.delete
         redirect_to articles_path
      end
 
@@ -37,7 +37,7 @@ class ArticlesController < ApplicationController
          
 
         @article = Article.new(article_params)
-
+         
          if @article.save
             flash[:notice] = "Article was created successfully."
             redirect_to  @article
@@ -57,7 +57,7 @@ def set_article
 end
 
 def article_params
-  params.require(:article).permit(:title, :description)
+  params.require(:article).permit(:text, :description)
 end
 
 

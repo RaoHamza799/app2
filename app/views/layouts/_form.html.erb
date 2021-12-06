@@ -6,13 +6,13 @@
     <div class="col-10">
       <%= form_with(model: @article, class: "shadow p-3 mb-3 bg-info rounded", local: true) do |f| %>
         <div class="form-group row">
-          <%= f.label :text, class: "col-2 col-form-label text-light  font-weight-bold" %>
+          <%= f.label :Text, class: "col-2 col-form-label text-light  font-weight-bold" %>
           <div class="col-10">
             <%= f.text_field :text, class: "form-control shadow rounded", placeholder: "Title of article" %>
           </div>
         </div>
         <div class="form-group row">
-          <%= f.label :description, class: "col-2 col-form-label text-light font-weight-bold" %>
+          <%= f.label :Description, class: "col-2 col-form-label text-light font-weight-bold" %>
           <div class="col-10"> 
             <%= f.text_area :description, rows: 10, class: "form-control shadow rounded", placeholder: "Description of article" %>
           </div>
